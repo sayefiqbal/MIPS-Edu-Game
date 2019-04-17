@@ -1,6 +1,6 @@
 
 /**
- * This class create Instrucion Menu whcih should contain all Instructions that we will 
+ * This class create Instrucion Menu whcih should contain all Instructions that we will
  * teach people. When people press these instructions long enough, it supposes to give
  * them the hint that what the instruction is and how to use them.
  *
@@ -8,7 +8,7 @@
  * @extends {GameScene}
  */
 class InstructionMenu extends GameScene{
-    
+
     /**
      *Creates an instance of InstructionMenu.
      * @memberof InstructionMenu
@@ -20,7 +20,7 @@ class InstructionMenu extends GameScene{
 
     /**
      * This function initialized Instruction Menu. All components of instruction menu should
-     * me delceared, and added to, here. 
+     * me delceared, and added to, here.
      *
      * @memberof InstructionMenu
      */
@@ -32,5 +32,10 @@ class InstructionMenu extends GameScene{
         addInstruction.addLongPressEvent(AddHint);
         addInstruction.addClickEvent(AddHint);
         this.addComponent(addInstruction,-1);
+
+        var back = Button.getButton('New_Game_Button',185,245,0,0,'GO BACK');
+        back.addClickEvent(new NewSceneEvent(new SelectChapterMenu()));
+        this.addComponent(back,-1);
+
     }
 }
